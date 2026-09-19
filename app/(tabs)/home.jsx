@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, Text, ScrollView, SafeAreaView, TouchableOpacity, Image, StatusBar } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
+  const router = useRouter();
   return (
     <View className="flex-1 bg-gray-50">
       <StatusBar barStyle="light-content" backgroundColor="#FF3B30" />
@@ -102,7 +104,7 @@ export default function HomeScreen() {
         <View className="px-5 mt-6 mb-12">
           <TouchableOpacity 
             className="bg-[#FF3B30] py-4 rounded-2xl shadow-md flex-row justify-center items-center"
-            // onPress={() => navigation.navigate('Modules')} // Add your navigation logic here
+            onPress={() => router.push("/lessons")} // Add your navigation logic here
           >
             <Text className="text-white text-base font-bold mr-2">Start Learning</Text>
             <Ionicons name="arrow-forward" size={20} color="white" />
