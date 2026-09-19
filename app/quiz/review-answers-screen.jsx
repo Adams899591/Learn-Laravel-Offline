@@ -187,7 +187,7 @@ export default function CBTReviewAnswersScreen() {
               </View>
 
               {/* Explanation Box */}
-              {item.solution ? (
+              {item.explanation ? (
                 <View className="bg-blue-50 border border-blue-200 rounded-2xl p-4 mb-4">
                   <View className="flex-row items-center mb-1">
                     <Ionicons name="bulb-outline" size={16} color="#1d4ed8" style={{ marginRight: 6 }} />
@@ -196,7 +196,7 @@ export default function CBTReviewAnswersScreen() {
                     </Text>
                   </View>
                   <Text className="text-xs text-blue-900 leading-relaxed font-medium">
-                    {item.solution}
+                    {item.explanation}
                   </Text>
                 </View>
               ) : null}

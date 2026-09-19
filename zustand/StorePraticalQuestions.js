@@ -8,7 +8,7 @@ export const UsePracticeStore = create((set) => ({
 
   setPracticeData: (allQuestions, courses) => {
     const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-    const selected20 = shuffled.slice(0, 10);
+    const selected20 = shuffled.slice(0, 20); // Set number of questions here
 
     set({ 
       practiceQuestions: selected20, 
