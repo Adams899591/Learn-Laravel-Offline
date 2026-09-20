@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, ScrollView, SafeAreaView, TouchableOpacity, Image, StatusBar } from 'react-native';
+import { View, Text, ScrollView,  SafeAreaView,TouchableOpacity, Image, StatusBar } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router'; // Import router for navigation
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // Added a 'screen' property to map to your module detail pages
 const curriculumList = [
@@ -36,14 +37,15 @@ const curriculumList = [
 ];
 
 export default function ModulesListScreen() {
+   const insets = useSafeAreaInsets();
   return (
     <View className="flex-1 bg-gray-50">
       {/* Status Bar */}
       <StatusBar barStyle="light-content" backgroundColor="#FF3B30" />
       
       {/* --- PROFESSIONAL HERO SECTION --- */}
-      <SafeAreaView className="bg-[#FF3B30]">
-        <View className="bg-[#FF3B30] pt-4 pb-10 px-5 rounded-b-[40px] shadow-lg z-25 -mb-4">
+      <SafeAreaView  className="bg-[#FF3B30]">
+        <View style={{ paddingTop: insets.top + 4 }} className="bg-[#FF3B30] pt-4 pb-10 px-5 rounded-b-[40px] shadow-lg z-25 -mb-4">
           
           <View className="flex-row items-center mb-4">
             <View className="bg-white p-3 rounded-2xl shadow-sm mr-4">

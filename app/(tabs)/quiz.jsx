@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, ScrollView, SafeAreaView, TouchableOpacity, Image, StatusBar } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { UsePracticeStore } from '../../zustand/StorePraticalQuestions';
 import allQuestionsData from '../questions/laravel-questions.json'; // Adjust path if needed
@@ -41,6 +42,7 @@ const EXPECTATIONS = [
 ];
 
 export default function QuizWelcomeScreen() {
+  const insets = useSafeAreaInsets();
   const router = useRouter();
   const { clearPracticeData, setPracticeData } = UsePracticeStore();
 
@@ -68,7 +70,7 @@ export default function QuizWelcomeScreen() {
         />
 
         <SafeAreaView>
-          <View className="items-center px-6 pt-6 pb-16">
+          <View style={{ paddingTop: insets.top + 4 }}  className="items-center px-6 pt-6 pb-16">
             <View className="bg-white p-4 rounded-3xl shadow-lg mb-5">
               <Image
                 source={require('../../assets/images/icon.png')}

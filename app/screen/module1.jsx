@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router'; 
 import * as Clipboard from 'expo-clipboard';
 import * as Speech from 'expo-speech';
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const lessonContent = [
   { 
@@ -74,6 +75,7 @@ const lessonContent = [
 ];
 
 export default function Module1DetailScreen() { 
+  const insets = useSafeAreaInsets();
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [copiedId, setCopiedId] = useState(null); // Tracks which block was copied
 
@@ -122,11 +124,11 @@ export default function Module1DetailScreen() {
   };
 
   return (
-    <View className="flex-1 bg-gray-50">
+    <View  className="flex-1 bg-gray-50">
       <StatusBar barStyle="light-content" backgroundColor="#FF3B30" />
       
       {/* --- HEADER SECTION --- */}
-      <View className="bg-[#FF3B30] rounded-b-[48px] shadow-lg z-20">
+      <View style={{ paddingTop: insets.top }} className="bg-[#FF3B30] rounded-b-[48px] shadow-lg z-20">
         <SafeAreaView>
           <View className="pt-4 pb-10 px-6">
             
